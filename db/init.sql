@@ -13,13 +13,13 @@ CREATE TABLE IF NOT EXISTS equipos (
     tipo           ENUM('Laptop','Escáner','Impresora térmica','Switch','Access Point','Tablet','Servidor','Otro') NOT NULL,
     marca          VARCHAR(50)  NOT NULL,
     numero_serie   VARCHAR(50)  NOT NULL UNIQUE,
-    ubicacion      VARCHAR(100) NOT NULL,
+    area_trabajo      VARCHAR(100) NOT NULL,
     estado         ENUM('Disponible','Asignado en línea','Asignado a oficina','En mantenimiento','En garantía','Dado de baja') NOT NULL DEFAULT 'Disponible',
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Registros de ejemplo (Departamento de IT - SEIS)
-INSERT INTO equipos (nombre, tipo, marca, numero_serie, ubicacion, estado) VALUES
+INSERT INTO equipos (nombre, tipo, marca, numero_serie, area_trabajo, estado) VALUES
 ('Laptop corporativa Ingeniería', 'Laptop', 'Dell', 'IT-LPT-101', 'Oficina Ingeniería', 'Asignado a oficina'),
 ('Escáner inalámbrico Línea 1', 'Escáner', 'Zebra', 'IT-SCN-204', 'Línea de Ensamble 1', 'Asignado en línea'),
 ('Impresora térmica de etiquetas', 'Impresora térmica', 'Zebra', 'IT-PRT-302', 'Taller de Soporte IT', 'En mantenimiento'),
